@@ -1,0 +1,6 @@
+C:\kurssit\jotahi\Hissi\Hissi\obj\Debug\Hissisovellus.csprojResolveAssemblyReference.cache
+C:\kurssit\jotahi\Hissi\Hissi\bin\Debug\Hissi.exe.config
+C:\kurssit\jotahi\Hissi\Hissi\bin\Debug\Hissi.exe
+C:\kurssit\jotahi\Hissi\Hissi\bin\Debug\Hissi.pdb
+C:\kurssit\jotahi\Hissi\Hissi\obj\Debug\Hissi.exe
+C:\kurssit\jotahi\Hissi\Hissi\obj\Debug\Hissi.pdb
