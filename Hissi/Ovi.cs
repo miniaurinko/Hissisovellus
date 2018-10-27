@@ -1,4 +1,5 @@
 ﻿
+//ovi joka osaa mennä auki ja kiinni
 class Ovi
 {
     private bool Closed;

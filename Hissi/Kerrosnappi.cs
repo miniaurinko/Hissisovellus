@@ -11,7 +11,7 @@ namespace Hissisovellus
         public KerrosNappiPainettu e;
         public delegate void NapinPainallus(Kerrosnappi k, KerrosNappiPainettu e);
 
-
+        //alustus
         public Kerrosnappi(int _level, int _direction, bool _serviceCodePressed, bool _pressed)
         {
             level = _level;
@@ -20,16 +20,18 @@ namespace Hissisovellus
             this.pressed = _pressed;
         }
 
-        public void painanappi(int suunta)
+        //suoritetaan tapahtuma, jossa kerrosnappia on painettu
+        public void painanappi(int suunta, bool huoltaja)
         {
             direction = suunta;
-            Console.WriteLine("Painoit nappia kerroksessa " +level+ "menossa "+suuntaan() );
+            Console.WriteLine("Painoit nappia kerroksessa " +level+ " menossa "+suuntaan() );
             KerrosNappiPainettu args = new Hissisovellus.KerrosNappiPainettu();
             args.kerros = this.level;
             args.direction = suunta;
+            args.huoltaja = huoltaja;
             Painallusk(this, args);
         }
-
+        //apualiohjelma suunnan kirjoittamiseksi
         public string suuntaan ()
         {
             if (direction == 0) return "alaspäin";
@@ -37,9 +39,11 @@ namespace Hissisovellus
         }
 
     }
+    //tapahtuman argumentit: kerros ja suunta
     public class KerrosNappiPainettu : EventArgs
     {
         public int kerros { get; set; }
         public int direction { get; set; }
+        public bool huoltaja { get; set; }
     }
 }

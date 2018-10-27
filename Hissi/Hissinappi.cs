@@ -1,6 +1,7 @@
 ﻿using System;
 namespace Hissisovellus
 {
+    //nappi joka on hississä
     class Hissinappi : Nappi
     {
         private int kerros;
@@ -8,6 +9,7 @@ namespace Hissisovellus
         public HissiNappiPainettu e;
         public delegate void NapinPainallus(Hissinappi h, HissiNappiPainettu e);
 
+        //alustus
         public Hissinappi(int _level, bool _serviceCodePressed, bool _pressed)
         {
             kerros = _level;
@@ -15,18 +17,25 @@ namespace Hissisovellus
             this.pressed = _pressed;
         }
 
-        public void painakerros(int kerrosnro)
+        //tapahtuma jossa hississä on painettu jotain kerroksen numeroa
+        public void painakerros(int kerrosnro, bool huoltaja)
         {
-            Console.WriteLine("Plim plom, hissi menossa kohti kerrosta " +kerrosnro);
-            HissiNappiPainettu args = new Hissisovellus.HissiNappiPainettu();
-            args.kerros = kerrosnro;
-            Painallus(this, args);
-        }
+           
+           //Console.WriteLine("Painoit nappia " + kerrosnro);
+           //Console.WriteLine("Plim plom, hissi menossa kohti kerrosta " + kerrosnro);
+           HissiNappiPainettu args = new Hissisovellus.HissiNappiPainettu();
+           args.kerros = kerrosnro;
+           args.huoltaja = huoltaja;
+           Painallus(this, args);
 
+        }
         
     }
+
+    //argumentit tapahtumalle: kerros
     public class HissiNappiPainettu : EventArgs
     {
         public int kerros { get; set; }
+        public bool huoltaja { get; set; }
     }
 }
